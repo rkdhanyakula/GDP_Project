@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Page menu</title>
+</head>
+<body>
+<!--
+Only the internal content of the following div is included within
+the template, in menu fragment
+-->
+
+<!-- Main navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                <span class="sr-only">Menu</span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <!-- Brand logo -->
+            <div class="organization-logo navbar-brand">
+                <div>
+
+
+                    <a title="client" href="/" data-th-href="@{/}"> <img
+                            alt="client"
+                            src="resources/img/logo/gdp-logo.png"
+                            class="mainLogo"/>
+                    </a>
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <!-- /navbar-header -->
+        <div id="bs-example-navbar-collapse-1"
+             class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav">
+
+                <!-- About Us -->
+                <li class="w108px h75px block-item"><a
+                         href="#"><i
+                        class="fa fa-home fa-lg" aria-hidden="true"></i>&nbsp;<br
+                        class="hideTag"/> <span class="hidden-sm">Home</span></a></li>
+                <!-- About Us -->
+
+                <!-- About Us -->
+                <li class="w108px h75px block-item"><a
+                        href="#"><i
+                        class="fa fa-bullhorn fa-lg" aria-hidden="true"></i>&nbsp;<br
+                        class="hideTag"/> <span class="hidden-sm"
+                                                data-th-text="#{label_about_us}">What is GDP ?</span></a></li>
+                <!-- About Us -->
+
+                <!-- Search -->
+                <li class="w108px h75px block-item"><a
+
+                        href="#"><i class="fa fa-search fa-lg"
+                                                         aria-hidden="true"></i>&nbsp;<br class="hideTag"/> <span
+                        class="hidden-sm" data-th-text="#{label_search}">Search</span></a></li>
+                <!-- Search -->
+
+                <!-- Dashboard -->
+                <li class="w108px h75px block-item"><a
+                        href="#">
+                    <i class="fa fa-dashboard fa-lg" aria-hidden="true"> </i>&nbsp;<br
+                        class="hideTag"/> <span class="hidden-sm"
+                                                data-th-text="#{label_dashboard}">Dashboard</span>
+                </a></li>
+                <!-- Dashboard -->
+
+                <!-- Login -->
+                <li data-layout-fragment="menu-login"><a data-toggle="modal"
+                                                         data-target="#myModal"> <i class="fa fa-user user-icon"
+                                                                                    aria-hidden="true"></i>&nbsp;
+                </a></li>
+                <!-- Login -->
+
+            </ul>
+
+        </div>
+
+
+    </div>
+</nav>
+<style>
+
+
+    /* body {
+                font-family: "Lato", sans-serif;
+                transition: background-color .5s;
+            } */
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        /*  font-size: 25px; */
+        color: #818181;
+        display: block;
+        transition: 0.3s
+    }
+
+    .sidenav a:hover, .offcanvas a:focus {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+    }
+</style>
+
+<div id="mySidenav" class="sidenav">
+    <ul>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <ul class="panel-heading">
+            <a href="#usermanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_users})}">Users
+                Management</a>
+
+            <div id="usermanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul class="panel-heading">
+                        <a href="#accrequest" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_accountrequest})}">Account
+                            Request</a>
+                        <div id="accrequest" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/accountrequests/create-form"
+                                       data-th-text="#{label_create_entity(#{label_accountrequest})}">Create
+                                    AccountRequest</a></li>
+                                <li><a href="/accountrequests"
+                                       data-th-text="#{label_list_entity(#{label_accountrequest_plural})}">List
+                                    AccountRequest</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#users" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_users})}">Users</a>
+                        <div id="users" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/pvt/userss/create-form"
+                                       data-th-text="#{label_create_entity(#{label_users})}">Create
+                                    Users</a></li>
+                                <li><a href="/pvt/userss"
+                                       data-th-text="#{label_list_entity(#{label_users_plural})}">List
+                                    Users</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#salutation" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_salutation})}">Salutations</a>
+                        <div id="salutation" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/pvt/salutations/create-form"
+                                       data-th-text="#{label_create_entity(#{label_salutation})}">Create
+                                    Salutation</a></li>
+                                <li><a href="/pvt/salutations"
+                                       data-th-text="#{label_list_entity(#{label_salutation_plural})}">List
+                                    Salutation</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#professionalinfo" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_user_professionalinfo})}">Professional
+                            Info</a>
+                        <div id="professionalinfo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/pvt/user_professionalinfoes/create-form"
+                                       data-th-text="#{label_create_entity(#{label_user_professionalinfo})}">Create
+                                    User_ProfessionalInfo</a></li>
+                                <li><a href="/pvt/user_professionalinfoes"
+                                       data-th-text="#{label_list_entity(#{label_user_professionalinfo_plural})}">List
+                                    User_ProfessionalInfo</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#workingexperience" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_user_workingexperience})}">Working
+                            Experience</a>
+                        <div id="workingexperience" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/pvt/user_workingexperiences/create-form"
+                                       data-th-text="#{label_create_entity(#{label_user_workingexperience})}">Create
+                                    User_WorkingExperience</a></li>
+                                <li><a href="/pvt/user_workingexperiences"
+                                       data-th-text="#{label_list_entity(#{label_user_workingexperience_plural})}">List
+                                    User_WorkingExperience</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#gmotrainingexperience" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_user_gmotrainingexperience})}">GMO
+                            Training Experience</a>
+                        <div id="gmotrainingexperience" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a
+                                        href="/pvt/user_gmotrainingexperiences/create-form"
+                                        data-th-text="#{label_create_entity(#{label_user_gmotrainingexperience})}">Create
+                                    User_GMOTrainingExperience</a></li>
+                                <li><a href="/pvt/user_gmotrainingexperiences"
+                                       data-th-text="#{label_list_entity(#{label_user_gmotrainingexperience_plural})}">List
+                                    User_GMOTrainingExperience</a></li>
+                            </div>
+                        </div>
+
+
+                    </ul>
+                </div>
+            </div>
+        </ul>
+
+        <ul class="panel-heading">
+            <a href="#rolemanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_role})}">Role
+                Management</a>
+
+            <div id="rolemanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul class="panel-heading">
+                        <a href="#grouproles" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_user_group_roles})}">User_Group_Roles</a>
+                        <div id="grouproles" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/user_group_roleses/create-form"
+                                       data-th-text="#{label_create_entity(#{label_user_group_roles})}">Create
+                                    User_Group_Roles</a></li>
+                                <li><a href="/user_group_roleses"
+                                       data-th-text="#{label_list_entity(#{label_user_group_roles_plural})}">List
+                                    User_Group_Roles</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#userroles" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_userroles})}">UserRoles</a>
+                        <div id="userroles" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/userroleses/create-form"
+                                       data-th-text="#{label_create_entity(#{label_userroles})}">Create
+                                    UserRoles</a></li>
+                                <li><a href="/userroleses"
+                                       data-th-text="#{label_list_entity(#{label_userroles_plural})}">List
+                                    UserRoles</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#userrolesdtl" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_userrolesdetail})}">UserRolesDetail</a>
+                        <div id="userrolesdtl" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/userrolesdetails/create-form"
+                                       data-th-text="#{label_create_entity(#{label_userrolesdetail})}">Create
+                                    UserRolesDetail</a></li>
+                                <li><a href="/userrolesdetails"
+                                       data-th-text="#{label_list_entity(#{label_userrolesdetail_plural})}">List
+                                    UserRolesDetail</a></li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </ul>
+
+        <ul class="panel-heading">
+            <a href="#orgmanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_organisation_menu})}">Organisation
+                Management</a>
+
+            <div id="orgmanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul class="panel-heading">
+                        <a href="#organisations" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_organisations})}">Organisations</a>
+                        <div id="organisations" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/organisationss/create-form"
+                                       data-th-text="#{label_create_entity(#{label_organisations})}">Create
+                                    Organisations</a></li>
+                                <li><a href="/organisationss"
+                                       data-th-text="#{label_list_entity(#{label_organisations_plural})}">List
+                                    Organisations</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#employers" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_employer})}">Employer</a>
+                        <div id="employers" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/employers/create-form"
+                                       data-th-text="#{label_create_entity(#{label_employer})}">Create
+                                    Employer</a></li>
+                                <li><a href="/employers"
+                                       data-th-text="#{label_list_entity(#{label_employer_plural})}">List
+                                    Employer</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#organisationtypes" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_organisationtypes})}">OrganisationTypes</a>
+                        <div id="organisationtypes" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/organisationtypeses/create-form"
+                                       data-th-text="#{label_create_entity(#{label_organisationtypes})}">Create
+                                    OrganisationTypes</a></li>
+                                <li><a href="/organisationtypeses"
+                                       data-th-text="#{label_list_entity(#{label_organisationtypes_plural})}">List
+                                    OrganisationTypes</a></li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </ul>
+
+        <ul class="panel-heading">
+            <a href="#contentmanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_content_menu})}">Content
+                Management</a>
+            <div id="contentmanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul class="panel-heading">
+                        <a href="#staticpages" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_staticpages})}">StaticPages</a>
+                        <div id="staticpages" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/staticpageses/create-form"
+                                       data-th-text="#{label_create_entity(#{label_staticpages})}">Create
+                                    StaticPages</a></li>
+                                <li><a href="/staticpageses"
+                                       data-th-text="#{label_list_entity(#{label_staticpages_plural})}">List
+                                    StaticPages</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#newsandactivities" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_newsactivities})}">News
+                            And Activities</a>
+                        <div id="newsandactivities" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/newsactivitieses/create-form"
+                                       data-th-text="#{label_create_entity(#{label_newsactivities})}">Create
+                                    News And Activities</a></li>
+                                <li><a href="/newsactivitieses"
+                                       data-th-text="#{label_list_entity(#{label_newsactivities_plural})}">List
+                                    News And Activities</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#rssfeeds" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_rssfeeds})}">RSSFeeds</a>
+                        <div id="rssfeeds" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/rssfeedss/create-form"
+                                       data-th-text="#{label_create_entity(#{label_rssfeeds})}">Create
+                                    RSSFeeds</a></li>
+                                <li><a href="/rssfeedss"
+                                       data-th-text="#{label_list_entity(#{label_rssfeeds_plural})}">List
+                                    RSSFeeds</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#quicklinks" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_quicklinks})}">QuickLinks</a>
+                        <div id="quicklinks" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a data-th-href="@{/pvt/quicklinkss/create-form}"
+                                       href="/quicklinkss/create-form"
+                                       data-th-text="#{label_create_entity(#{label_quicklinks})}">Create
+                                    QuickLinks</a></li>
+                                <li><a data-th-href="@{/pvt/quicklinkss}"
+                                       href="/quicklinkss"
+                                       data-th-text="#{label_list_entity(#{label_quicklinks_plural})}">List
+                                    QuickLinks</a></li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </ul>
+
+        <ul class="panel-heading">
+            <a href="#artifactmanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_artifact_menu})}">Artifact
+                Management</a>
+            <div id="artifactmanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul class="panel-heading">
+                        <a href="#testingDetection" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_detectionmethod})}">Testing
+                            Detection Method</a>
+                        <div id="testingDetection" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/detectionmethods/create-form"
+                                       data-th-text="#{label_create_entity(#{label_detectionmethod})}">Create
+                                    DetectionMethod</a></li>
+                                <li><a href="/detectionmethods"
+                                       data-th-text="#{label_list_entity(#{label_detectionmethod_plural})}">List
+                                    DetectionMethod</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#event" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_event})}">Event</a>
+                        <div id="event" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/events/create-form"
+                                       data-th-text="#{label_create_entity(#{label_event})}">Create
+                                    Event</a></li>
+                                <li><a href="/events"
+                                       data-th-text="#{label_list_entity(#{label_event_plural})}">List
+                                    Event</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#matrix" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_matrix})}">Matrix</a>
+                        <div id="matrix" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/matrixes/create-form"
+                                       data-th-text="#{label_create_entity(#{label_matrix})}">Create
+                                    Matrix</a></li>
+                                <li><a href="/matrixes"
+                                       data-th-text="#{label_list_entity(#{label_matrix_plural})}">List
+                                    Matrix</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#publication" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_publication})}">Publication</a>
+                        <div id="publication" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/publications/create-form"
+                                       data-th-text="#{label_create_entity(#{label_publication})}">Create
+                                    Publication</a></li>
+                                <li><a href="/publications"
+                                       data-th-text="#{label_list_entity(#{label_publication_plural})}">List
+                                    Publication</a></li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </ul>
+
+        <ul class="panel-heading">
+            <a href="#questionmanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_question_menu})}">Question
+                Management</a>
+            <div id="questionmanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul class="panel-heading">
+                        <a href="#ct_question" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_ctquestion})}">CT
+                            Questions</a>
+                        <div id="ct_question" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/ctquestions/create-form"
+                                       data-th-text="#{label_create_entity(#{label_ctquestion})}">Create
+                                    CTQuestion</a></li>
+                                <li><a href="/ctquestions"
+                                       data-th-text="#{label_list_entity(#{label_ctquestion_plural})}">List
+                                    CTQuestion</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#ctquestionstructure" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_ctquestionstructure})}">CTQuestionStructure</a>
+                        <div id="ctquestionstructure" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/ctquestionstructures/create-form"
+                                       data-th-text="#{label_create_entity(#{label_ctquestionstructure})}">Create
+                                    CTQuestionStructure</a></li>
+                                <li><a href="/ctquestionstructures"
+                                       data-th-text="#{label_list_entity(#{label_ctquestionstructure_plural})}">List
+                                    CTQuestionStructure</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#ctanswer" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_ctanswer})}">CTAnswer</a>
+                        <div id="ctanswer" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/ctanswers/create-form"
+                                       data-th-text="#{label_create_entity(#{label_ctanswer})}">Create
+                                    CTAnswer</a></li>
+                                <li><a href="/ctanswers"
+                                       data-th-text="#{label_list_entity(#{label_ctanswer_plural})}">List
+                                    CTAnswer</a></li>
+                            </div>
+                        </div>
+
+                    </ul>
+                </div>
+            </div>
+        </ul>
+
+        <ul class="panel-heading">
+            <a href="#surveymanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_survey_menu})}">Survey
+                Management</a>
+            <div id="surveymanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul class="panel-heading">
+                        <a href="#surveyquestion" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_surveyquestion})}">SurveyQuestions</a>
+                        <div id="surveyquestion" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/surveyquestions/create-form"
+                                       data-th-text="#{label_create_entity(#{label_surveyquestion})}">Create
+                                    SurveyQuestion</a></li>
+                                <li><a href="/surveyquestions"
+                                       data-th-text="#{label_list_entity(#{label_surveyquestion_plural})}">List
+                                    SurveyQuestion</a></li>
+                            </div>
+                        </div>
+
+                        <a href="#surveyquestionstructure" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_surveyquestionstructure})}">CTQuestionStructure</a>
+                        <div id="surveyquestionstructure"
+                             class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/surveyquestionstructures/create-form"
+                                       data-th-text="#{label_create_entity(#{label_surveyquestionstructure})}">Create
+                                    SurveyQuestionStructure</a></li>
+                                <li><a href="/surveyquestionstructures"
+                                       data-th-text="#{label_list_entity(#{label_surveyquestionstructure_plural})}">List
+                                    SurveyQuestionStructure</a></li>
+
+                            </div>
+                        </div>
+
+                        <a href="#surveyanswer" data-toggle="collapse"
+                           data-th-utext="#{label_menu_entry(#{label_surveyanswer})}">SurveyAnswer</a>
+                        <div id="surveyanswer" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <li><a href="/surveyanswers/create-form"
+                                       data-th-text="#{label_create_entity(#{label_surveyanswer})}">Create
+                                    SurveyAnswer</a></li>
+                                <li><a href="/surveyanswers"
+                                       data-th-text="#{label_list_entity(#{label_surveyanswer_plural})}">List
+                                    SurveyAnswer</a></li>
+                            </div>
+                        </div>
+
+                    </ul>
+                </div>
+            </div>
+        </ul>
+
+        <ul class="panel-heading">
+            <a href="#testingservicemanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_gmotesting_menu})}">GMOTestingService
+                Management</a>
+            <div id="testingservicemanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <li><a data-th-href="@{/pvt/gmotestingservices/create-form}"
+                           data-th-text="#{label_create_entity(#{label_gmotestingservice})}">Create
+                        GMOTestingService</a></li>
+                    <li><a data-th-href="@{/pvt/gmotestingservices}"
+                           data-th-text="#{label_list_entity(#{label_gmotestingservice_plural})}">List
+                        GMOTestingService</a></li>
+                </div>
+            </div>
+        </ul>
+        <ul class="panel-heading">
+            <a href="#comptestingmanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_comptesting_menu})}">ComparativeTestingService
+                Management</a>
+            <div id="comptestingmanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <li><a href="/comparativetestingservices/create-form"
+                           data-th-text="#{label_create_entity(#{label_comparativetestingservice})}">Create
+                        ComparativeTestingService</a></li>
+                    <li><a href="/comparativetestingservices"
+                           data-th-text="#{label_list_entity(#{label_comparativetestingservice_plural})}">List
+                        ComparativeTestingService</a></li>
+                </div>
+            </div>
+        </ul>
+        <ul class="panel-heading">
+            <a href="#feedbackmanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_feedback_menu})}">Feedback
+                Management</a>
+            <div id="feedbackmanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <li><a href="/feedbacks/create-form"
+                           data-th-text="#{label_create_entity(#{label_feedback})}">Create
+                        Feedback</a></li>
+                    <li><a href="/feedbacks"
+                           data-th-text="#{label_list_entity(#{label_feedback_plural})}">List
+                        Feedback</a></li>
+                </div>
+            </div>
+        </ul>
+
+        <ul class="panel-heading">
+            <a href="#trainingmanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_training_menu})}">Training
+                Management</a>
+            <div id="trainingmanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <li><a href="/trainings/create-form"
+                           data-th-text="#{label_create_entity(#{label_training})}">Create
+                        Training</a></li>
+                    <li><a href="/trainings"
+                           data-th-text="#{label_list_entity(#{label_training_plural})}">List
+                        Training</a></li>
+                </div>
+            </div>
+        </ul>
+
+        <ul class="panel-heading">
+            <a href="#countrymanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_country_menu})}">Country
+                Management</a>
+            <div id="countrymanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <li><a href="/countries/create-form"
+                           data-th-text="#{label_create_entity(#{label_country})}">Create
+                        Country</a></li>
+                    <li><a href="/countries"
+                           data-th-text="#{label_list_entity(#{label_country_plural})}">List
+                        Country</a></li>
+                </div>
+            </div>
+        </ul>
+
+        <ul class="panel-heading">
+            <a href="#analysismanagement" data-toggle="collapse"
+               data-th-utext="#{label_menu_entry(#{label_analysis_menu})}">Analysis
+                Management</a>
+            <div id="analysismanagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <li><a href="/analyses/create-form"
+                           data-th-text="#{label_create_entity(#{label_analysis})}">Create
+                        Analysis</a></li>
+                    <li><a href="/analyses"
+                           data-th-text="#{label_list_entity(#{label_analysis_plural})}">List
+                        Analysis</a></li>
+                </div>
+            </div>
+        </ul>
+
+    </ul>
+</div>
+<script>
+    /* 			function openNav() {
+     document.getElementById("mySidenav").style.width = "350px";
+     document.getElementById("main").style.marginLeft = "350px";
+     document.body.style.backgroundColor = "rgba(0,0,0,0.1)";
+     }
+
+     function closeNav() {
+     document.getElementById("mySidenav").style.width = "0";
+     document.getElementById("main").style.marginLeft = "0";
+     document.body.style.backgroundColor = "white";
+     } */
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+
+</div>
+
+</body>
+</html>

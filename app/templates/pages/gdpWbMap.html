@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div class="socialWidgetContainer autoHeight" id="reportChartArea"
+     style="overflow: hidden; height: 400px; weight: 300px; padding: 0;">
+    <div class="container">
+        <!-- Sub Widget - UI Chart-->
+        <div class="row">
+            <div class="block-item bgm-general">
+                <div class="clearfix">
+                    <div class="doc">
+                        <i class="fa fa-pie-chart"></i>
+                    </div>
+                    <div class="text">
+                        <h2>
+                            <a href="#" target="_blank" id="reportChartTitle">{{map_title}}
+                            </a>
+                        </h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="socialWidgetContainer autoHeight" id=""
+                 style="overflow: hidden; height: 400px; weight: 300px; padding: 0;">
+                <div class="container">
+                    <div class="row">
+                        <h1>{{var_one}}</h1>
+                    </div>
+                </div>
+                <hr />
+
+            </div>
+        </div>
+        <!-- Sub Widget - UI Table Information-->
+
+        <!-- Sub Widget - UI Table Information-->
+        <div class="row ">
+            <div class="block-item bgm-general">
+                <div class="clearfix">
+                    <div class="doc">
+                        <i class="fa fa-pie-chart"></i>
+                    </div>
+                    <div class="text">
+                        <h2>
+                            <a href="#"
+
+                               target="_blank" id="reportTableTitle">{{map_title}}</a>
+                        </h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="socialWidgetContainer autoHeight" id="reportTableArea"
+                 style="overflow: hidden; height: 400px; weight: 300px; padding: 0; display: none;">
+                <div class="container">
+                    <div class="row">
+                        <table>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Country</th>
+                                <th>GDP(Millions of US$)</th>
+                            </tr>
+                               <tr ng-repeat="x in data">
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                               </tr>
+
+                        </table>
+                        <h1>{{data}}</h1>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Sub Widget - UI Table Information-->
+
+    </div>
+
+</div>
+
+</body>
+</html>

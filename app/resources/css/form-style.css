@@ -1,0 +1,204 @@
+legend {
+	/* color: #547f7f; */
+	color: #b3b30e;
+	border-bottom: 0px solid rgba(204, 204, 51, 0.37);
+	font-weight: bold;
+	width: auto;
+	padding: 0 10px 0 5px;
+}
+
+fieldset {
+	border: 1px solid #cccc33;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+.btnCustom {
+	border-radius: 0px;
+	padding: 6px 15px;
+	border-width: 0px;
+	font-size: 16px;
+	font-weight: bold;
+	/* border-bottom-width: 3px; */
+}
+
+.btnCustom:hover {
+	margin-top: 0px;
+}
+
+.btn:active {
+	margin-top: -1px;
+	border-bottom-width: 0px;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus,
+	.btn.active.focus {
+	outline: none;
+}
+
+.btnDarkGreen {
+	background-color: #537b7b;
+	box-shadow: inset 0 -2px 0px 0px #dede1d;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	transition: all .2s ease-in;
+}
+
+.btnDarkGreen:hover {
+	color: #fff;
+	box-shadow: inset 0 -4px 0px 0px #dede1d;
+	background-color: #436565;
+}
+
+.btnLightGreen {
+	background-color: #b3b30e;
+	box-shadow: inset 0 -2px 0px 0px #e0e01e;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	transition: all .2s ease-in;
+}
+
+.btnLightGreen:hover {
+	color: #fff;
+	box-shadow: inset 0 -4px 0px 0px #dede1d;
+	background-color: #9c9c00;
+}
+
+input:focus, textarea:focus, keygen:focus, select:focus {
+	outline: 0px !important;
+}
+
+button {
+	outline: none;
+}
+
+.mygmoFormControl {
+	border-radius: 4px !important;
+	border: 1px solid rgba(102, 153, 153, 0.6);
+	color: #669999;
+	font-size: 17px;
+	box-shadow: 4px 3px 6px 0px rgba(83, 123, 123, 0.47);
+}
+
+.mygmoFormControl:hover {
+	border: 1px solid rgb(102, 153, 153);
+	box-shadow: 4px 3px 6px 0px rgba(83, 123, 123, 0.88);
+}
+
+.mygmoFormControl:focus {
+	border-color: #cccc33;
+	box-shadow: inset 0 1px 1px rgba(204, 204, 51, 0.19), 0 0 8px
+		rgba(204, 204, 51, 0.42);
+	border-radius: 4px !important;
+}
+
+.select2-container--bootstrap .select2-selection--single .select2-selection__arrow b
+	{
+	border-color: #699 transparent transparent transparent !important;
+}
+
+.select2-selection__clear {
+	display: none;
+}
+
+.select2-container--bootstrap .select2-dropdown {
+	border-color: rgba(102, 153, 153, 0.6);
+}
+
+.select2-container--bootstrap .select2-results__option--highlighted[aria-selected]
+	{
+	background-color: #b7b732;
+}
+
+.select2-results__option {
+	padding: 2px 6px !important;
+	font-size: 15px;
+}
+
+.select2-selection select2-selection--single:hover {
+	border: 1px solid rgb(102, 153, 153) !important;
+	box-shadow: 4px 3px 6px 0px rgba(83, 123, 123, 0.88) !important;
+}
+
+.control-label {
+	color: #547f7f !important;
+	font-size: 19px;
+	font-weight: bold;
+	padding-top: 0px !important
+}
+
+.btnCustomInfo {
+	color: #ffffff;
+	background-color: #75caeb;
+	border-color: #5fc1e8;
+}
+
+.btnCustomWarning {
+	color: #ffffff;
+	background-color: #ff851b;
+	border-color: #ff7701;
+}
+
+.btnCustomSuccess {
+	color: #ffffff;
+	background-color: #28b62c;
+	border-color: #23a127;
+}
+
+.btnCustomDefault {
+	color: #555555;
+	background-color: #eeeeee;
+	border-color: #e2e2e2;
+}
+
+.btnCustomLightGreen {
+	color: #555555;
+	background-color: #cccc33;
+	border-color: #cccc33;
+}
+
+.btnCustomDarkRed {
+	color: #555555;
+	background-color: #d83131;
+	border-color: #9e1d1d;
+}
+
+.btnCustomDarkGrey {
+	color: #555555;
+	background-color: #525d3d;
+	border-color: #7e8374;
+}
+
+.btnCustomLightPink {
+	color: #555555;
+	background-color: #db99e4;
+	border-color: #a88bac;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control
+	{
+	background-color: rgba(102, 153, 153, 0.06);
+	color: #669999;
+	box-shadow: none;
+	border: 1px solid rgba(102, 153, 153, 0.6);
+}
+
+.select2-container--bootstrap.select2-container--disabled .select2-selection,
+	.select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice
+	{
+	background-color: rgba(102, 153, 153, 0.06) !important;
+	color: #669999 !important;
+	box-shadow: none !important;
+	border: none !important;
+}
+
+.select2-container--bootstrap .select2-selection--single .select2-selection__rendered {
+    color: #669999  !important;
+}
+
+.select2-container--bootstrap .select2-selection {
+	    border-color: rgba(102, 153, 153, 0.6) !important;
+	    border: 1px solid rgba(102, 153, 153, 0.6) !important;
+}

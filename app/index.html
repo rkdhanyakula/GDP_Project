@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GDP Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet"
+          href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="app.css">
+    <script
+            src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet"
+          href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/css/base-style.css">
+    <link rel="stylesheet" href="resources/css/standard.css">
+    <link rel="stylesheet" href="resources/css/form-style.css">
+    <link rel="stylesheet"
+          href="bower_components/fontawesome/css/font-awesome.min.css">
+
+
+
+</head>
+<body>
+
+<div class="application-title">
+    <div class="bg-header page-header" style="border-top: none;">
+        <div class="container">
+				<span class="application-title">Gross Domestic Product (GDP)
+					Dashboard</span>
+        </div>
+    </div>
+
+</div>
+
+<hr class="noLine"/>
+
+<div class="container bg-container">
+    <ng-include src="'templates/base/menu.html'"></ng-include>
+</div>
+
+<div class="container custom-block-item">
+
+    <!-- Menu UI -->
+    <div class="row">
+        <ng-include src="'templates/base/sub-menu.html'"></ng-include>
+    </div>
+    <!-- Menu UI -->
+
+    <!-- Widget UI -->
+    <div class="row">
+
+        <div ui-view></div>
+
+    </div>
+    <!-- Widget UI -->
+
+</div>
+
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<ng-include src="'templates/base/footer.html'"></ng-include>
+
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<!--Angular Library and Modules-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<!--Angular Library and Modules-->
+
+<!--Instantiation and Config Files -->
+<script src="app.js"></script>
+<script src="config.js"></script>
+<!--Instantiation and Config Files-->
+
+
+<!--Services-->
+<script src="services/gdpDataByWorldbankService.js"></script>
+<!--Services-->
+
+<!--Controllers-->
+<script src="controllers/gdpDashboardController.js"></script>
+<script src="controllers/gdpGsMapController.js"></script>
+<script src="controllers/gdpImfMapController.js"></script>
+<script src="controllers/gdpUnMapController.js"></script>
+<script src="controllers/gdpWbMapController.js"></script>
+<!--Controllers-->
+
+<!--Plugins-->
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+<script src="bower_components/jQuery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!--Plugins-->
+
+
+
+</body>
+</html>
