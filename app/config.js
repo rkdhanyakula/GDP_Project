@@ -24,6 +24,6 @@ function config($stateProvider,$urlRouterProvider){
         controller:"gdpGsMapController"
     });
 
-   //$urlRouterProvider.otherwise("/gdpWbMap");
+   $urlRouterProvider.otherwise("/gdpWbMap");
 }
 

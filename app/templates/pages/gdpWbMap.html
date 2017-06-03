@@ -19,7 +19,7 @@
                     </div>
                     <div class="text">
                         <h2>
-                            <a href="#" target="_blank" id="reportChartTitle">{{map_title}}
+                            <a href="#" target="_blank" id="reportChartTitle">{{map_title}} - Map View
                             </a>
                         </h2>
 
@@ -30,7 +30,7 @@
                  style="overflow: hidden; height: 400px; weight: 300px; padding: 0;">
                 <div class="container">
                     <div class="row">
-                        <h1>{{var_one}}</h1>
+                       <leaflet width="100%" height="680px" lf-center="malaysia" markers="markers"></leaflet>
                     </div>
                 </div>
                 <hr />
@@ -50,30 +50,32 @@
                         <h2>
                             <a href="#"
 
-                               target="_blank" id="reportTableTitle">{{map_title}}</a>
+                               target="_blank" id="reportTableTitle">{{map_title}} - Tabular View</a>
                         </h2>
 
                     </div>
                 </div>
             </div>
             <div class="socialWidgetContainer autoHeight" id="reportTableArea"
-                 style="overflow: hidden; height: 400px; weight: 300px; padding: 0; display: none;">
+                 style="overflow: hidden; height: 400px; weight: 300px; padding: 0; ">
                 <div class="container">
                     <div class="row">
-                        <table>
+                        <div style="height: 500px !important;overflow-y:scroll;">
+                        <table class="table table-responsive table-bordered table-striped marker-tooltip-table">
                             <tr>
                                 <th>Rank</th>
                                 <th>Country</th>
-                                <th>GDP(Millions of US$)</th>
+                                <th>GDP (Millions of US$) </th>
                             </tr>
                                <tr ng-repeat="x in data">
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
+                                   <td>{{x.RANK}}</td>
+                                   <td>{{x.COUNTRY}}</td>
+                                   <td>{{x.GDP_IN_MILLIONS | currency}}</td>
                                </tr>
 
                         </table>
-                        <h1>{{data}}</h1>
+                        </div>
+
 
                     </div>
                 </div>
