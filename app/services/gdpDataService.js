@@ -51,3 +51,27 @@ function gdpDataByGovtSpendingService($http) {
         })
     }
 }
+
+myApp.service("gdpDataByGovtEduExpService", gdpDataByGovtEduExpService);
+gdpDataByGovtEduExpService.$inject=["$http"];
+function gdpDataByGovtEduExpService($http) {
+    this.getGovtEduExpDataFunc = function () {
+        return $http.get("/gdpdata/govteduexp").then(function (res) {
+            return res.data;
+        }, function (res) {
+            return res;
+        })
+    }
+}
+
+myApp.service("gdpDataByGdpVsTotalExp", gdpDataByGdpVsTotalExp);
+gdpDataByGdpVsTotalExp.$inject=["$http"];
+function gdpDataByGdpVsTotalExp($http) {
+    this.getVsTotalExpDataFunc = function () {
+        return $http.get("/gdpdata/gdpVsTotalExp").then(function (res) {
+            return res.data;
+        }, function (res) {
+            return res;
+        })
+    }
+}

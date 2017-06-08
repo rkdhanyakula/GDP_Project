@@ -37,7 +37,14 @@ function gdpWbMapController($scope, gdpDataByWorldBankService, $rootScope) {
                 "<tr><td>Rank </td><td>" + value.RANK + "</td></tr>" +
                 "<tr><td>GDP <br/><span style='font-size: 14px;'>(Millions of US$)</span></td><td>$" + value.GDP_IN_MILLIONS + "</td></tr>" +
                 "</table>",
-                icon: {}
+                icon: {
+                    // iconUrl : 'resources/img/icons/marker-icon.png',
+                    iconSize:     [38, 38], // size of the icon
+                    shadowSize:   [50, 64], // size of the shadow
+                    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                    shadowAnchor: [4, 62],  // the same for the shadow
+                    popupAnchor:  [-3, -76] //
+                }
             });
 
 
@@ -58,7 +65,9 @@ function gdpWbMapController($scope, gdpDataByWorldBankService, $rootScope) {
             lng: 101.976,
             zoom: 6
         },
-        // markers: {
+
+
+            // markers: {
         //     m1: {
         //         lat: 4.21048,
         //         lng: 101.976,

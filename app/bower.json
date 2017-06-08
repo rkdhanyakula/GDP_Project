@@ -15,6 +15,9 @@
     "jQuery": "1.12.0",
     "fontawesome": "~4.7.0",
     "angular-ui-router": "~0.3.2",
-    "leaflet": "0.7.x"
+    "leaflet": "0.7.x",
+    "d3": "~3.5.17",
+    "d3plus": "~1.9.1",
+    "ngstorage" : "~0.3.11"
   }
 }

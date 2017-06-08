@@ -28,16 +28,21 @@
                  style="overflow: hidden; height: 400px; weight: 300px; padding: 0;">
                 <div class="container">
                     <div class="row">
-                        <leaflet width="100%" height="680px" lf-center="malaysia" markers="markers"></leaflet>
+
+                        <div style="height: 800px">
+
+                        <d3plus-treemap data="ngHeatMapData" id='name' size="value"
+
+                        ></d3plus-treemap>
+
+                        </div>
+
                     </div>
                 </div>
-
 
             </div>
         </div>
         <hr/>
-        <!-- Sub Widget - UI Table Information-->
-
         <!-- Sub Widget - UI Table Information-->
         <div class="row ">
             <div class="block-item bgm-general">
@@ -62,17 +67,16 @@
                         <div style="height: 500px !important;overflow-y:scroll;">
                             <table class="table table-responsive table-bordered table-striped marker-tooltip-table">
                                 <tr>
-
+                                    <th>Rank</th>
                                     <th>Country</th>
-                                    <th>Tax Burden % of GDP</th>
-                                    <th>Govt. Expend % of GDP</th>
+                                    <th>Expenditures on education (% of GDP)</th>
 
                                 </tr>
                                 <tr ng-repeat="x in data">
 
+                                    <td>{{x.RANK}}</td>
                                     <td>{{x.COUNTRY}}</td>
-                                    <td>{{x.TAX_BURDEN}} %</td>
-                                    <td>{{x.GOVT_EXP}} %</td>
+                                    <td>{{x.EDU_EXP}} %</td>
                                 </tr>
 
                             </table>

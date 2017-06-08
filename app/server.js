@@ -56,6 +56,23 @@ app.get("/gdpdata/govtspending", function (req,res) {
     })
 })
 
+app.get("/gdpdata/govteduexp", function (req,res) {
+    var dbQuery = "SELECT * FROM rkdesig1_censof.GDP_EDU_EXP;";
+    connection.query(dbQuery, function (err, records, fields) {
+        res.send(records);
+    })
+})
+
+app.get("/gdpdata/gdpVsTotalExp", function (req,res) {
+   // var dbQuery = "SELECT * FROM rkdesig1_censof.GDP_VS_TEXP;";
+    var dbQuery = "SELECT ID,COUNTRY,GDP,TOTAL_REVENUE,TOTAL_EXP FROM rkdesig1_censof.GDP_VS_TEXP ORDER BY GDP DESC;";
+    connection.query(dbQuery, function (err, records, fields) {
+        res.send(records);
+    })
+})
+
+
+
 app.listen(8090);
 console.log("Server Listening Port 8090");
 

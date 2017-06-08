@@ -22,6 +22,18 @@ function config($stateProvider,$urlRouterProvider){
         url:"/gdpGsMap",
         templateUrl:"templates/pages/gdpGsMap.html",
         controller:"gdpGsMapController"
+    }).state("gdpEduExp", {
+        url:"/gdpEduExp",
+        templateUrl:"templates/pages/gdpEduExp.html",
+        controller:"gdpGovtEduExpController"
+    }).state("gdpVsTotalExp", {
+        url:"/gdpVsTotalExp",
+        templateUrl:"templates/pages/gdpVsTotalExp.html",
+        controller:"gdpVsTotalExpController"
+    }).state("whatIsGdp",{
+        url : "/whatIsGdp",
+        templateUrl : "templates/staticPages/whatIsGdp.html",
+        controller : ''
     });
 
    $urlRouterProvider.otherwise("/gdpWbMap");

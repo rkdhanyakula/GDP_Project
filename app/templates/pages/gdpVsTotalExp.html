@@ -9,6 +9,7 @@
      style="overflow: hidden; height: 400px; weight: 300px; padding: 0;">
     <div class="container">
         <!-- Sub Widget - UI Chart-->
+
         <div class="row">
             <div class="block-item bgm-general">
                 <div class="clearfix">
@@ -17,7 +18,7 @@
                     </div>
                     <div class="text">
                         <h2>
-                            <a href="#" target="_blank" id="reportChartTitle">{{map_title}} - Map View
+                            <a href="#" target="_blank" id="reportChartTitle">{{map_title}} - Chart View
                             </a>
                         </h2>
 
@@ -27,8 +28,10 @@
             <div class="socialWidgetContainer autoHeight" id=""
                  style="overflow: hidden; height: 400px; weight: 300px; padding: 0;">
                 <div class="container">
-                    <div class="row">
-                        <leaflet width="100%" height="680px" lf-center="malaysia" markers="markers"></leaflet>
+                    <div class="row" id="testId">
+
+                        <nvd3 options="chartOptions" data="chartData"></nvd3>
+
                     </div>
                 </div>
 
@@ -36,8 +39,6 @@
             </div>
         </div>
         <hr/>
-        <!-- Sub Widget - UI Table Information-->
-
         <!-- Sub Widget - UI Table Information-->
         <div class="row ">
             <div class="block-item bgm-general">
@@ -56,23 +57,26 @@
                 </div>
             </div>
             <div class="socialWidgetContainer autoHeight" id="reportTableArea"
-                 style="overflow: hidden; height: 400px; weight: 300px; padding: 0;">
+                 style="overflow: hidden; height: 600px; weight: 300px; padding: 0;">
                 <div class="container">
                     <div class="row">
                         <div style="height: 500px !important;overflow-y:scroll;">
                             <table class="table table-responsive table-bordered table-striped marker-tooltip-table">
                                 <tr>
-
+                                    <th>#</th>
                                     <th>Country</th>
-                                    <th>Tax Burden % of GDP</th>
-                                    <th>Govt. Expend % of GDP</th>
+                                    <th>Gross Domestic Product (GDP)</th>
+                                    <th>Total Expenditure</th>
+                                    <th>Total Revenue</th>
 
                                 </tr>
                                 <tr ng-repeat="x in data">
 
+                                    <td>{{}}</td>
                                     <td>{{x.COUNTRY}}</td>
-                                    <td>{{x.TAX_BURDEN}} %</td>
-                                    <td>{{x.GOVT_EXP}} %</td>
+                                    <td>{{x.GDP}}</td>
+                                    <td>{{x.TOTAL_EXP}}</td>
+                                    <td>{{x.TOTAL_REVENUE}}</td>
                                 </tr>
 
                             </table>
@@ -85,6 +89,16 @@
             </div>
         </div>
         <!-- Sub Widget - UI Table Information-->
+
+        <div class="row">
+            <label>Figures are given as million USD.</label>
+            <dl>
+                <dt>Data Source :</dt>
+                <dd><a href="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_%28nominal%29" target="_blank">List of countries by GDP (nominal)</a></dd>
+                <dd><a href="https://en.wikipedia.org/wiki/List_of_countries_by_government_budget" target="_blank">List of countries by government budget</a></dd>
+            </dl>
+
+        </div>
 
     </div>
 
