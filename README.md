@@ -1,17 +1,23 @@
 Gross Domestic Product (GDP) Dashboard :
 Guide to Run the Project :
 
-1. Open the below Git Link
-   https://github.com/rkdhanyakula/GDP_Project
+
+1. > Install Node.js from https://nodejs.org/en/download/		
+   > (Node Js Install Guide : http://blog.teamtreehouse.com/install-node-js-npm-windows )	
+   > To test Node.js is installed, Type Node -v in commnad promnpt. It wil return the installed verison number.
+   	
+   > Open the below Git Link
+   > https://github.com/rkdhanyakula/GDP_Project
 2. Use Clone URL or Download ZIP to download/ Checkout the project.
 3. After Download > Unzip the Folder > Locate and Open the Folder GDP_Project-master
 4. Open the Folder GDP_Project-master > app
 5. Inside app folder , Shift + Right Click -> And Select "Open Command Window Here"  from context menu.
 6. Command Window will be opened by pointing the app folder
-7. Just type
-	npm start, then wait for the message "Server Listening Port 1000".
+7. Just type :
+	npm start
+	Then wait for the message "Server Listening Port 1000".
 8. Go to Browser and type or copy :
-		http://localhost:1000
+		 http://localhost:1000
 9. Want to stop the server
 	Just use shortcut "ctrl + c' in command window.
 	You will see a message "Terminate batch job " Y/N"
@@ -31,13 +37,15 @@ Model - MySQL
 View - HTML5, CSS3
 Controllers - Angular Js 1.6
 IDE - Webstorm
+Server - Node.js
 
 
 Used Languages :
 Angular Js 1.6 - The Best way to achieve 2 way data binding and to reduce the coding.
 Javascript,
 HTML5 ,
-CSS3
+CSS3, 
+Node.js
 
 Libraries Used :
 Leaflet - Have all the features like markers, layers angular support.
