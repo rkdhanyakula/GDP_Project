@@ -2,12 +2,14 @@ Gross Domestic Product (GDP) Dashboard :
 Guide to Run the Project :
 
 
-1. > Install Node.js from https://nodejs.org/en/download/		
-   > (Node Js Install Guide : http://blog.teamtreehouse.com/install-node-js-npm-windows )	
-   > To test Node.js is installed, Type Node -v in commnad promnpt. It wil return the installed verison number.
+1. > Install Node.js from https://nodejs.org/en/download/ 
+   > (Node JS Install Guide : http://blog.teamtreehouse.com/install-node-js-npm-windows ) 
+   > To test Node.js is installed, Type Node -v in command prompt.
+     It will return the installed version number.
    	
    > Open the below Git Link
    > https://github.com/rkdhanyakula/GDP_Project
+   
 2. Use Clone URL or Download ZIP to download/ Checkout the project.
 3. After Download > Unzip the Folder > Locate and Open the Folder GDP_Project-master
 4. Open the Folder GDP_Project-master > app
